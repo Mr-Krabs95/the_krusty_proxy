@@ -1,0 +1,22 @@
+
+{% extends "krusty_proxy/base.html" %}
+
+    {% block content %}
+
+    {% include "krusty_proxy/includes/header.html" %}
+
+        {% if form.errors %}
+            <p>Ваше имя пользователя и пароль не совпали. Пожалуйста, попробуйте ещё раз.</p>
+        {% endif %}
+        
+        <form method="post" action="{% url 'users:login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <button name="submit">Авторизоваться</button>
+            <input type="hidden" name="next" value="{% url 'krusty_proxy:index' %}" />
+        </form>
+
+    {% include "krusty_proxy/includes/footer.html" %}
+    
+    {% endblock content %}

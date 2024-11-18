@@ -7,7 +7,14 @@
             <nav>
                 <a href="#features" class="text-white text-decoration-none me-3">Преимущества</a>
                 <a href="#pricing" class="text-white text-decoration-none me-3">Тарифы</a>
-                <a href="#contact" class="text-white text-decoration-none">Контакты</a>
+                <a href="#contact" class="text-white text-decoration-none me-3">Контакты</a>
+                {% if user.is_authenticated %}
+                    Привет, {{ user.username }}
+                    <a href="{% url 'users:logout' %}" class="text-white text-decoration-none ms-3">Выйти</a>
+                {% else %}
+                    <a href="{% url 'users:register' %}" class="text-white text-decoration-none">Регистрация</a> -
+                    <a href="{% url 'users:login' %}" class="text-white text-decoration-none">Личный кабинет</a>
+                {% endif %}
             </nav>
         </div>
     </header>

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # мои приложения
     'krusty_proxy',
+    'users',
     # приложения django по умолчанию
     'django.contrib.admin',
     'django.contrib.auth',

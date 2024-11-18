@@ -1,17 +1,6 @@
 {% extends "krusty_proxy/base.html" %}
     {% block content %}
     {% include "krusty_proxy/includes/header.html" %}
-    <!-- Шапка -->
-    <header class="bg-primary text-white py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="h3">The Krusty Proxy</h1>
-            <nav>
-                <a href="#features" class="text-white text-decoration-none me-3">Преимущества</a>
-                <a href="#pricing" class="text-white text-decoration-none me-3">Тарифы</a>
-                <a href="#contact" class="text-white text-decoration-none">Контакты</a>
-            </nav>
-        </div>
-    </header>
 
     <!-- Герой-секция -->
     <section class="text-center text-white bg-dark py-5">
@@ -102,5 +91,6 @@
             </div>
         </div>
     </section>
+    
     {% include "krusty_proxy/includes/footer.html" %}
     {% endblock content %}
