@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.contrib.auth import login, logout
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 def register(request):
@@ -15,8 +15,8 @@ def register(request):
             new_user = form.save()
             # Выполнение входа и перенаправление на домашнюю страницу.
             login(request, new_user)
-            return render(request, 'krusty_proxy/index.html')
+            return redirect('krusty_proxy:index')
 
     # Вывести пустую или недействительную форму.
     context = {'form': form}
-    return render(request, 'users:register.html', context)
+    return render(request, 'registration/register.html', context)

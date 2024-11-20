@@ -1,6 +1,8 @@
 {% extends "krusty_proxy/base.html" %}
-    {% block content %}
 
+    {% block content %}
+    {% include "krusty_proxy/includes/header.html" %}
+    
         <form method="post" action="{% url 'users:register' %}">
             {% csrf_token %}
             {{ form.as_p }}
@@ -8,4 +10,5 @@
             <input type="hidden" name="next" value="{% url 'krusty_proxy:index' %}" />
         </form>
 
+    {% include "krusty_proxy/includes/footer.html" %}
     {% endblock content %}

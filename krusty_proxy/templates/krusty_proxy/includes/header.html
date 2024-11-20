@@ -9,8 +9,8 @@
                 <a href="#pricing" class="text-white text-decoration-none me-3">Тарифы</a>
                 <a href="#contact" class="text-white text-decoration-none me-3">Контакты</a>
                 {% if user.is_authenticated %}
-                    Привет, {{ user.username }}
-                    <form action="{% url 'users:logout' %}" method="post" class="d-inline">
+                    Привет, {{ user.username }} :)
+                    <form action="{% url 'users:logout' %}" method="post" class="d-inline ms-3">
                         {% csrf_token %}
                         <button type="submit" class="text-white text-decoration-none border-0 bg-transparent p-0">Выход</button>
                     </form>
