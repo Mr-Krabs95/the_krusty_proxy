@@ -9,4 +9,6 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     # страница регистрации
     path('register/', views.register, name='register'),
+    # страница личного кабинета
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]

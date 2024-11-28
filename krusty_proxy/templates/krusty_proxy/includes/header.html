@@ -9,14 +9,14 @@
                 <a href="#pricing" class="text-white text-decoration-none me-3">Тарифы</a>
                 <a href="#contact" class="text-white text-decoration-none me-3">Контакты</a>
                 {% if user.is_authenticated %}
-                    Привет, {{ user.username }} :)
-                    <form action="{% url 'users:logout' %}" method="post" class="d-inline ms-3">
-                        {% csrf_token %}
+                    <a href="{% url 'users:dashboard' %}" class="text-white text-decoration-none me-3">Личный кабинет</a>
+                    <form action="{% url 'users:logout' %}" method="post" class="d-inline">
+                            {% csrf_token %}
                         <button type="submit" class="text-white text-decoration-none border-0 bg-transparent p-0">Выход</button>
                     </form>
                 {% else %}
                     <a href="{% url 'users:register' %}" class="text-white text-decoration-none">Регистрация</a> -
-                    <a href="{% url 'users:login' %}" class="text-white text-decoration-none">Личный кабинет</a>
+                    <a href="{% url 'users:login' %}" class="text-white text-decoration-none">Войти</a>
                 {% endif %}
             </nav>
         </div>

@@ -12,9 +12,8 @@
         <form method="post" action="{% url 'users:login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            
             <button name="submit">Авторизоваться</button>
-            <input type="hidden" name="next" value="{% url 'krusty_proxy:index' %}" />
+            <input type="hidden" name="next" value="{% url 'users:dashboard' %}" />
         </form>
 
     {% include "krusty_proxy/includes/footer.html" %}
